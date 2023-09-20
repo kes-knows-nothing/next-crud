@@ -5,6 +5,7 @@ export default function Home() {
     <>
       <h2>Welcome</h2>
       Hello, WEB
+      <Image src="/kim.png" alt="minjae" width={604} height={812} />
     </>
   );
 }
