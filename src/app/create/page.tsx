@@ -24,7 +24,9 @@ export default function Create() {
         throw new Error("Network response was not ok");
       }
       const result = await response.json();
+      console.log(result);
       const lastId = result.id;
+      router.refresh();
       router.push(`/read/${lastId}`);
     } catch (error) {
       console.error("Error:", error);
