@@ -26,7 +26,8 @@ export function Control() {
                 fetch("http://localhost:9999/topics" + id, options)
                   .then((resp) => resp.json())
                   .then((result) => {
-
+                    router.push('/')
+                    router.refresh();
                   });
               }}
             />

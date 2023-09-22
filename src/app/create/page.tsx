@@ -19,7 +19,7 @@ export default function Create() {
     };
 
     try {
-      const response = await fetch(`http://localhost:9999/topics`, options);
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL + `topics`, options);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

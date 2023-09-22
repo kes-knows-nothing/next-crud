@@ -10,7 +10,7 @@ export default function Update() {
   const params = useParams();
   const id = params.id;
   useEffect(() => {
-    fetch("http://localhost:9999/topics/" + id)
+    fetch(process.env.NEXT_PUBLIC_API_URL + "topics" + id)
       .then((resp) => resp.json())
       .then((result) => {
         setTitle(result.title);
@@ -32,10 +32,7 @@ export default function Update() {
     };
 
     try {
-      const response = await fetch(
-        "http://localhost:9999/topics" + id,
-        options
-      );
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "topics" + id, options);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
