@@ -23,7 +23,7 @@ export default async function RootLayout({
     cache: "no-store",
   });
   const topics = await res.json();
-  console.log(topics);
+  console.log(topics)
   return (
     <html>
       <body>

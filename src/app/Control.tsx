@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 
 export function Control() {
   const params = useParams();
-  const router =useRouter(;)
+  const router =useRouter()
   const id = params.id;
   return (
     <ul>
@@ -23,7 +23,7 @@ export function Control() {
               value="delete"
               onClick={() => {
                 const options = { method: "DELETE" };
-                fetch("http://localhost:9999/topics" + id, options)
+                fetch(process.env.NEXT_PUBLIC_API_URL + `topics/${id}`, options)
                   .then((resp) => resp.json())
                   .then((result) => {
                     router.push('/')
